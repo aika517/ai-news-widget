@@ -1,0 +1,38 @@
+{
+  "date": "8月26日",
+  "updatedAt": "00:07",
+  "news": [
+    {
+      "source": "OpenAI",
+      "title": "AI推論チップ「Jalapeño」を発表",
+      "summary": "OpenAIが開発したカスタム推論チップJalapeñoは、高速で電力効率に優れたAI推論を実現し、スループット向上と低遅延化を実現。",
+      "link": "https://openai.com/index/jalapeno-first-results",
+      "originalTitle": "Jalapeño's first results show industry-leading speed and efficiency in AI inference"
+    },
+    {
+      "source": "Anthropic",
+      "title": "Claude CodeでAI-NativeなSDLCを実現",
+      "summary": "Anthropicが、計画・設計・構築・テスト・デプロイ・保守の各段階にClaudeを組み込むAI-ネイティブなSDLC（ソフトウェア開発ライフサイクル）の実装ガイドを公開。",
+      "link": "https://claude.com/blog/the-ai-native-sdlc-playbook",
+      "originalTitle": "The AI-Native SDLC playbook"
+    },
+    {
+      "source": "Anthropic",
+      "title": "Claude Mythos 5のサイバー防御機能を拡大",
+      "summary": "Anthropicが最強モデルClaude Mythos 5をセキュリティ製品に統合し、35百万ドルの資金でオープンソース脆弱性対応を支援。",
+      "link": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+      "originalTitle": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders"
+    },
+    {
+      "source": "OpenAI",
+      "title": "ロシアのAI偽情報キャンペーンを遮断",
+      "summary": "OpenAIが、ロシア発信のアカウントによる偽のイスラエル系シンクタンクプロモーションなどのAI悪用キャンペーンを検出し、制止措置を実施。",
+      "link": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+      "originalTitle": "Disrupting a new covert influence campaign from Russia"
+    }
+  ],
+  "aiTermOfTheDay": {
+    "term": "Model Context Window",
+    "explanation": "AIモデルが一度に処理できるテキスト情報の最大量。トークン数で表現され、大きいほど長い文書や複雑な指示を扱える。"
+  }
+}
