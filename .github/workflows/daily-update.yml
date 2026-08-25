@@ -1,0 +1,42 @@
+name: Daily AI News Update
+
+# 毎日決まった時刻に自動実行する設定
+on:
+  schedule:
+    # UTC時間で22時0分 = 日本時間で翌朝7時0分
+    - cron: "0 22 * * *"
+  # 手動でも実行できるようにしておく（テスト用）
+  workflow_dispatch:
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      # ① リポジトリの中身を取得
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ② Node.jsを使えるようにする
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ③ 必要なライブラリをインストール
+      - name: Install dependencies
+        run: npm install
+
+      # ④ ニュース取得・要約スクリプトを実行
+      - name: Fetch and summarize news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/fetch-news.js
+
+      # ⑤ 変更があれば、GitHubに自動でコミット＆プッシュ
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto update news: $(date +'%Y-%m-%d %H:%M')"
+          git push
